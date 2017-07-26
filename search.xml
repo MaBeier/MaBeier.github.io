@@ -3,6 +3,25 @@
   
     
     <entry>
+      <title><![CDATA[JS-原型的理解]]></title>
+      <url>/2017/07/26/JS-%E5%8E%9F%E5%9E%8B%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+      <content type="html"><![CDATA[<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><h3 id="创建对象3种方法"><a href="#创建对象3种方法" class="headerlink" title="创建对象3种方法"></a>创建对象3种方法</h3><h3 id="1-工厂模式"><a href="#1-工厂模式" class="headerlink" title="1.工厂模式"></a>1.工厂模式</h3><h4 id="解决：创建多个相似的对象；问题：不知道对象的类型；"><a href="#解决：创建多个相似的对象；问题：不知道对象的类型；" class="headerlink" title="解决：创建多个相似的对象；问题：不知道对象的类型；"></a>解决：创建多个相似的对象；问题：不知道对象的类型；</h4><h3 id="2-构造函数模式"><a href="#2-构造函数模式" class="headerlink" title="2.构造函数模式"></a>2.构造函数模式</h3><h4 id="解决：特定类型的对象；问题：每定义一个函数，即是实例化了一个对象-；"><a href="#解决：特定类型的对象；问题：每定义一个函数，即是实例化了一个对象-；" class="headerlink" title="解决：特定类型的对象；问题：每定义一个函数，即是实例化了一个对象 ；"></a>解决：特定类型的对象；问题：每定义一个函数，即是实例化了一个对象 ；</h4><h3 id="3-原型模式"><a href="#3-原型模式" class="headerlink" title="3.原型模式"></a>3.原型模式</h3><h4 id="原型对象包含了这个类型的所有实例共享的属性、方法；"><a href="#原型对象包含了这个类型的所有实例共享的属性、方法；" class="headerlink" title="原型对象包含了这个类型的所有实例共享的属性、方法；"></a>原型对象包含了这个类型的所有实例共享的属性、方法；</h4><pre><code>(1)每创建一个函数，都自带一个指针:prototype;
+(2)prototype 指向了函数的原型对象；
+(3)原型有一个contructor,指向了prototype所在函数;
+(4)而通过obj.prototype..为原型添加属性方法；
+</code></pre><h4 id="代码读取时，读取到某个属性，先看实例，，若没有，再往上看原型；"><a href="#代码读取时，读取到某个属性，先看实例，，若没有，再往上看原型；" class="headerlink" title="代码读取时，读取到某个属性，先看实例，，若没有，再往上看原型；"></a>代码读取时，读取到某个属性，先看实例，，若没有，再往上看原型；</h4><p>obj.hasOwnProperty(‘属性值’)；//只能检测实例是否有该属性,有true<br>‘属性值’ in obj //无论原型or实例，只要有该属性就true<br>obj.hasPrototypeProperty(obj,’属性值’)  //只能检测原型是否有该属性,有true</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> JS </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[imp_javascript]]></title>
       <url>/2017/07/21/imp-javascript/</url>
       <content type="html"></content>
