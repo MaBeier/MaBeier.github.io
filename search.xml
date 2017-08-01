@@ -3,6 +3,26 @@
   
     
     <entry>
+      <title><![CDATA[this指向]]></title>
+      <url>/2017/08/01/this%E6%8C%87%E5%90%91/</url>
+      <content type="html"><![CDATA[<h4 id="只有函数执行的时候才能确定this到底指向谁"><a href="#只有函数执行的时候才能确定this到底指向谁" class="headerlink" title="只有函数执行的时候才能确定this到底指向谁"></a>只有函数执行的时候才能确定this到底指向谁</h4><h4 id="实际上this的最终指向的是那个调用它的对象"><a href="#实际上this的最终指向的是那个调用它的对象" class="headerlink" title="实际上this的最终指向的是那个调用它的对象"></a>实际上this的最终指向的是那个调用它的对象</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">a</span></span>()&#123;</div><div class="line">	var user=<span class="string">'zz'</span>;</div><div class="line"> 	console.log(this.user);  //undefined</div><div class="line"> 	console.log(this);		//window</div><div class="line">	&#125;</div><div class="line"></div><div class="line">a()  //window.a()</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var o=&#123;</div><div class="line">	user:<span class="string">'zz'</span>;</div><div class="line">	fn:<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">		console.log(this.user)	//zz</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">o.fn();</div></pre></td></tr></table></figure>
+<h4 id="情况1"><a href="#情况1" class="headerlink" title="情况1:"></a>情况1:</h4><p>如果一个函数中有this,但是没被上一级的对象所调用，那么this指的就是window</p>
+<h4 id="情况2"><a href="#情况2" class="headerlink" title="情况2:"></a>情况2:</h4><p>一个函数中有this,这个函数有被上一级的对象所用，那this指向的就是上一级的对象；</p>
+<h4 id="情况3"><a href="#情况3" class="headerlink" title="情况3:"></a>情况3:</h4><p>如果一个函数中有this，这个函数被最外层的对象所调用，this指向的也是它上一级对象；</p>
+<h4 id="this永远指向的是最后调用它的对象"><a href="#this永远指向的是最后调用它的对象" class="headerlink" title="this永远指向的是最后调用它的对象"></a>this永远指向的是最后调用它的对象</h4><h4 id="当this碰到return"><a href="#当this碰到return" class="headerlink" title="当this碰到return"></a>当this碰到return</h4><p>如果返回值是对象，那么this指向的就是那个返回的对象，如果返回值不是一个对象那么this还是指向函数的事例</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> JS </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[webSocket]]></title>
       <url>/2017/07/31/webSocket/</url>
       <content type="html"><![CDATA[<p>作者：Ovear<br>链接：<a href="https://www.zhihu.com/question/20215561/answer/40316953" target="_blank" rel="external">https://www.zhihu.com/question/20215561/answer/40316953</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
